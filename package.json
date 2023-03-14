@@ -1,0 +1,24 @@
+{
+  "name": "pyscript-local",
+  "version": "1.0.0",
+  "description": "This heavily WIP script puts all of the Pyodide assets that a pyscript `index.html` file needs into a `runtime` folder. If `index.html` is next to the runtime folder, then you can put  ```toml [[interpreters]] src = \"runtime/pyodide.js\" name = \"pyodide-0.21.3\" lang = \"python\" ``` in your `<py-config>` and all of the Pyodide assets will be loaded from the runtime folder.",
+  "main": "index.mjs",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "node-fetch": "^2.6.9",
+    "pyodide": "^0.22.1",
+    "tr46": "^0.0.3",
+    "webidl-conversions": "^3.0.1",
+    "whatwg-url": "^5.0.0",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {},
+  "bin": {
+    "a": "./index.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
