@@ -4,7 +4,6 @@ import micropip
 from bs4 import BeautifulSoup
 from importlib import metadata
 import shutil
-from pyodide_js._api.config import indexURL
 from pyodide.http import pyfetch
 from asyncio import ensure_future, gather
 
@@ -33,7 +32,7 @@ async def process_html(html_file, target_dir):
     await gather(*futs)
 
     (target_path / "repodata.json").write_text(micropip.freeze())
-    for path in Path(indexURL).glob("*.whl"):
+    for path in Path("/home/index").glob("*.whl"):
         shutil.copy(path, target_path)
 
 

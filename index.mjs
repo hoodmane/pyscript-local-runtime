@@ -9,7 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 async function main(){
     const indexURL = resolve(__dirname, "node_modules/pyodide");
     const pyodide = await loadPyodide({ indexURL });
-    const mounts = [["/home/localdir", "."], ["/home/src_dir", __dirname], [indexURL, indexURL]];
+    const mounts = [["/home/localdir", "."], ["/home/src_dir", __dirname], ["/home/index", indexURL]];
     for(let [mount, root] of mounts) {
         pyodide.FS.mkdirTree(mount);
         pyodide.FS.mount(pyodide.FS.filesystems.NODEFS, { root }, mount);
